@@ -9,3 +9,7 @@
       [v] Enable Django Support
    4. Run > Edit Configurations > + > Django Server > Name : runserver
    5. VCS > Enable Version Control Integration.. > git > ok
+
+2. startapp 루시
+   1. python manage.py startapp 루시
+   2. '루시', in INSTALLED_APPS in settings.py
