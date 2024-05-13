@@ -18,5 +18,9 @@
    1. models
       1. Character
          1. name, feature, created_at, updated_at
+         2. `__str__()` : 객체를 출력할 때, 알맞은 String으로 포맷하여 출력.
       2. python manage.py makemigrations 루시
       3. python manage.py migrate 루시
+   2. admin
+      1. Character
+      2. python manage.py createsuperuser
