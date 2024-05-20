@@ -28,3 +28,5 @@
       1. R : CharacterListView
    4. templates/루시/
       1. character_list.html
+   5. urls
+      1. 루시:character_list
