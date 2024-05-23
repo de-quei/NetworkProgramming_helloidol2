@@ -19,6 +19,7 @@
       1. Character
          1. name, feature, created_at, updated_at
          2. `__str__()` : 객체를 출력할 때, 알맞은 String으로 포맷하여 출력.
+         3. `get_absolute_url()`: 캐릭터 하나 데이터 가져오자
       2. python manage.py makemigrations 루시
       3. python manage.py migrate 루시
    2. admin
@@ -30,6 +31,7 @@
       1. character_list.html
    5. urls
       1. 루시:character_list
+      2. 루시:character_detail
 
 4. templates/
    1. base.html
