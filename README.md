@@ -27,11 +27,16 @@
       2. python manage.py createsuperuser
    3. views
       1. R : CharacterListView
+      2. R : CharacterDetailView
+      3. R : CharacterCreateView
    4. templates/루시/
       1. character_list.html
+      2. character_detail.html
+      3. character_create.html
    5. urls
       1. 루시:character_list
       2. 루시:character_detail
+      3. 루시:character_create
 
 4. templates/
    1. base.html
