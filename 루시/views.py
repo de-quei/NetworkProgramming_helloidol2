@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 from 루시.models import Character
 
@@ -19,3 +19,9 @@ class CharacterCreateView(CreateView):
     fields = ['name', 'feature'] # '__all__'
     template_name_suffix = '_create' # character_form.html --> character_create.html
     success_url = reverse_lazy('루시:character_list') # 만들기 성공했을 때 이동할 URL
+
+class CharacterUpdateView(UpdateView):
+    model = Character
+    fields = '__all__' # ['name', 'feature']
+    template_name_suffix = '_update' # character_form.html --> character_update.html
+    success_url = reverse_lazy('루시:character_list')
