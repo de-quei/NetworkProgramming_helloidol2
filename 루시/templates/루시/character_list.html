@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Character List{% endblock %}
 
@@ -6,20 +7,30 @@
     <table class="table">
         <tr>
             <th>#</th>
+            <th>photo</th>
             <th>name</th>
             <th>features</th>
             <th>edit</th>
+            <th>remove</th>
         </tr>
         {% for character in character_list %}
         <tr>
             <td>{{ forloop.counter }}</td>
+            <td>
+                {% if character.photo == None %}
+                    <img src="{% static '루시/photo/no-photo.png' %}" alt="사진없음" style="width: 100px; height: 100px; object-fit: contain;">
+                {% else %}
+                    <img src="{{ character.photo.url }}" alt="" style="width: 100px; height: 100px; object-fit: contain;">
+                {% endif %}
+            </td>
             <td><a href="{% url '루시:character_detail' pk=character.id %}">{{ character.name }}</a></td>
             <td>{{ character.feature }}</td>
             <td><a href="{%  url '루시:character_update' pk=character.id %}" class="btn btn-warning">✍️</a></td>
+            <td><a href="{%  url '루시:character_delete' pk=character.id %}" class="btn btn-danger">🧨</a></td>
         </tr>
         {% endfor %}
         <tr>
-            <td colspan="4"><a href="{% url '루시:character_create' %}" class="btn btn-success">추가하기!</a></td>
+            <td colspan="6"><a href="{% url '루시:character_create' %}" class="btn btn-success">추가하기!</a></td>
         </tr>
     </table>
 {% endblock %}
